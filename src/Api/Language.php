@@ -4,6 +4,7 @@ namespace Ebay\Commerce\Translation\Api;
 
 use Ebay\Commerce\Translation\Model\TranslateRequest;
 use Ebay\Commerce\Translation\Model\TranslateResponse;
+use OpenAPI\Runtime\UnexpectedResponse;
 
 class Language extends AbstractAPI
 {
@@ -14,9 +15,9 @@ class Language extends AbstractAPI
      *
      * @param TranslateRequest $Model
      *
-     * @return TranslateResponse
+     * @return TranslateResponse|UnexpectedResponse
      */
-    public function translate(TranslateRequest $Model): TranslateResponse
+    public function translate(TranslateRequest $Model)
     {
         return $this->request(
         'translate',
